@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+/*action listing css*/
+ul.action_list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    list-style-type: none;
+}
+
+ul.action_list li {
+    margin: 0px;
+    padding: 0;
+    width: auto;
+    height: auto;
+    display: block;
+    color: #5b5b5b;
+    line-height: 28px;
+}
+
+ul.action_list li:hover {
+    color: #5b5b5b;
+    cursor: default;
+}
+
+ul.action_list a:hover {
+    color: #0eb8f3 !important;
+    cursor: pointer;
+}
+
+ul.action_list li i {
+    font-size: 16px !important;
+}
+
+ul.action_list li:last-child {
+    margin: 0px;
+}
+
+.db {
+    display: block;
+    clear: both;
+}

@@ -1,0 +1,70 @@
+<div class="col-md-12 user-container">
+  <h2 style="margin: auto"> Task Details</h2>
+  <a [routerLink]="['/add-task']" class="btn btn-primary" role="button">Add New Task</a>
+  <div class="row">
+    <div class="col-md-12  mt-5">
+      <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="form-inline">
+        <div class="form-group mb-2">
+              <label for="start_date">From Date:</label>
+              <input class="form-control" formControlName="from_date" placeholder="yyyy-mm-dd"
+                     name="from_date" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()">
+        </div>
+        
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="firstName">To Date:</label>
+          <input formControlName="to_date" placeholder="yyyy-mm-dd" name="end_date" class="form-control" id="end_date" [(ngModel)]="model1" ngbDatepicker #t="ngbDatepicker" (click)="t.toggle()">
+        </div>
+        <button class="btn btn-success mb-2">Search</button>
+
+      </form>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-md-12 mt-5 mb-5">
+  <table matSort (matSortChange) = "sortTask($event)" class="table table-striped">
+    <thead>
+    <tr>
+      <!-- <th class="hidden">Id</th> -->
+      <th mat-sort-header = "city">City </th>
+      <th mat-sort-header = "start_date">Start Date</th>
+      <th mat-sort-header = "end_date">End Date</th>
+      <th mat-sort-header = "price">Price</th>
+      <th mat-sort-header = "status">Status</th>
+      <th mat-sort-header = "color">Color</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let task of tasks">
+      <!-- <td class="hidden"></td> -->
+      <td>{{task.city}}</td>
+      <td>{{task.start_date}}</td>
+      <td>{{task.end_date}}</td>
+      <td>{{task.price}}</td>
+      <td>{{task.status}}</td>
+      <td>{{task.color}}</td>
+      <td  data-label="Action"> 
+        <ul class="action_list">
+            <li> 
+                <a class="" title="Edit"
+                [routerLink]="['/edit-task',task.id]">
+                <i class="fas fa-pencil-alt small"></i> Edit</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" title="Delete" (click)="isConfirmed($event, task.id)">
+                    <i class="far fa-trash-alt small"></i> Delete
+                </a>
+            </li>
+        </ul>
+    </td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+  </div>
+  <div class="col-12">
+    <ng-container *ngIf="totalItems > itemsPerPage">
+        <ngb-pagination [collectionSize]="totalItems" [pageSize]="itemsPerPage" [(page)]="page" [maxSize]="7" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+    </ng-container>
+  </div>
+</div>
