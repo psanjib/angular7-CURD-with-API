@@ -58,4 +58,4 @@ If it display "Lumen (5.5.2) (Laravel Components 5.5.*)"  successfully Rest API 
 
 //update Web API DB connection string
 
-Import the task.sql file in Mysql and DB connection setting .env file.
+Import the task.sql file in Mysql and update DB connection setting .env file.
