@@ -11,5 +11,5 @@ $ npm install
 $ ng serve
 ```
 
-
+## Setup Rest API
 //update Web API DB connection string
