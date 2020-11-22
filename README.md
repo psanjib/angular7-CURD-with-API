@@ -15,4 +15,6 @@ $ ng serve
 ```
 
 ## Setup Rest API
+To run PHP application we have to install XAMPP.
+[Lumen website](http://lumen.laravel.com/docs).
 //update Web API DB connection string
