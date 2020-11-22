@@ -5,6 +5,9 @@ CURD Operations with filter are implemented in Rest API using Mysql DB. Those Re
 ## Get the Code
 ```
 $ git clone https://github.com/psanjib/angular7-CURD-with-API.git
+```
+## Setup Angular Application
+```
 $ cd angular7-CURD-with-API/angular7
 $ npm install
 //run the app
