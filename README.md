@@ -33,4 +33,29 @@ The XAMPP control panel for start/stop Apache, MySQL, FileZilla & Mercury or ins
 For Linux -  Copy the source code from RestAPI-PHP folder and page in \opt\lampp folder
 
 Start XAMPP - sudo /opt/lampp/lampp start
+
+To Run the Application  
+
+move to the source code
+
+For Windows
+```
+$ cd  pathto(install drive C:\ or D:\)\xampp\htdocs
+$php -S localhost:8000 -t public
+```
+For Linux
+```
+$ cd /opt/lampp
+$php -S localhost:8000 -t public
+```
+
+Browse
+
+```
+localhost:8000
+```
+If it display "Lumen (5.5.2) (Laravel Components 5.5.*)"  successfully Rest API setup Completed
+
 //update Web API DB connection string
+
+Import the task.sql file in Mysql and DB connection setting .env file.
